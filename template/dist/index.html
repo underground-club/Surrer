@@ -53,7 +53,8 @@
                   <input type="button" value="Play" onClick="playVideo()">	
                   <input type="button" value="Stop" onClick="pauseVideo()">
                   <input type="button" value="Volume Up" onClick="upVolume()">
-                  <input type="button" value="Volume Down" onClick="downVolume()">
+                  <input type="button" value="Volume Down" onClick="downVolume()"><br>
+		  <input type="range" id="seekbar" value="0.000" min="0.000" step="0.001" />
                 </div>
               </div>
 
@@ -128,14 +129,36 @@
               //動画を一時停止
               v.pause();
             }
-            function upVolume() {	//音量アップボタン押下時の処理
-              //音量を上げる
-              v.volume = v.volume + 0.25;
+            function upVolume() {       //音量アップボタン押下時の処理
+                //音量を上げる
+		if(1 > (v.volume + 0.25)){
+		    v.volume = v.volume + 0.25;
+		}
             }
-            function downVolume() {	//音量ダウンボタン押下時の処理
-              //音量を下げる
-              v.volume = v.volume - 0.25;
+            function downVolume() {     //音量ダウンボタン押下時の処理
+                //音量を下げる
+		if(0 <= (v.volume - 0.25)){
+		    v.volume = v.volume - 0.25;
+		}
             }
+	    window.onload = function() {
+		video = document.getElementById('video');
+		seekbar = document.getElementById('seekbar');
+		if(video.readyState > 0){
+		    seekbar.max = video.duration;
+		}else{
+		    video.addEventListener('loadedmetadata', function(){
+			seekbar.max = video.duration;
+		    });
+		}
+		seekbar.addEventListener('change', function(){
+		    video.currentTime = seekbar.value;
+		},false);
+		video.addEventListener('timeupdate', function(){
+		    seekbar.value = video.currentTime;
+		    console.log(seekbar.value);
+		},false);
+	    };
         </script>
     </body>
 </html>
