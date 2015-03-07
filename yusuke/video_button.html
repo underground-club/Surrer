@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>VideoPlay</title>
+</head>
+<body>
+<video id="video" src="Town20121231g_SKY.mov" width="400" height="300"></video>
+<div style="width:400px; background-color:#333333; color:#ffffff;">
+<input type="button" value="Play" onClick="playVideo()">
+<input type="button" value="Stop" onClick="pauseVideo()">
+<input type="button" value="Volume Up" onClick="upVolume()">
+<input type="button" value="Volume Down" onClick="downVolume()">
+</div>
+<script type="text/javascript">
+<!--
+var v = document.getElementById('video');
+
+function playVideo() {
+        //動画を再生
+        v.play();
+}
+
+function pauseVideo() {
+        //動画を一時停止
+        v.pause();
+}
+
+function upVolume() {
+        //音量を上げる
+        v.volume = v.volume + 0.25;
+}
+
+function downVolume() {
+        //音量を下げる
+        v.volume = v.volume - 0.25;
+}
+// -->
+</script>
+
+</body>
+</html>
+
