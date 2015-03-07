@@ -9,7 +9,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title>template</title>
+        <title>Surrer</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -42,35 +42,40 @@
 
             <div class="View__detail">
               <div class="View__room">
-                <div class="View__roomName">$room name</div>
-                <p class="View__roomDescription">$room description</p>
-                <p class="View__roomOwner">$user_name</p>
+                <div class="View__roomName">深夜のhackday</div>
+                <p class="View__roomDescription">よなよな君をhackする</p>
+                <p class="View__roomOwner"><a href="http://hackday.jp/open/team/detail/?id=73">あんぐら部公式ch</a></p>
               </div>
 
               <div class="View__content">
-                <h2 class="View__contentTitle">$content_title</h2>
+                <h2 class="View__contentTitle">ビデオのファイル名</h2>
               </div>
             </div>
 
             <div class="View__main row">
               <div class="View__video col-sm-8">
-                <video id="video" class="View__videoContent" src="movies/movie1.mov" width="400" height="300"></video>
-                <div style="width:400px; color:#000000;">
-                  <input type="button" value="Play" onClick="playVideo()">	
-                  <input type="button" value="Stop" onClick="pauseVideo()">
-                  <input type="button" value="Volume Up" onClick="upVolume()">
-                  <input type="button" value="Volume Down" onClick="downVolume()">
+                <video id="video" class="View__videoContent" src="movies/movie1.mov" width="450"></video>
+                <div class="View__buttons">
+                  <input class="btn btn-default" type="button" value="Play" onClick="playVideo()">
+                  <input class="btn btn-default" type="button" value="Stop" onClick="pauseVideo()">
+                  <input class="btn btn-default" type="button" value="Volume Up" onClick="upVolume()">
+                  <input class="btn btn-default" type="button" value="Volume Down" onClick="downVolume()">
                 </div>
               </div>
 
               <div class="View__listener col-sm-4">
                 <div class="View__comment">
                   <!-- コメント入力欄 -->
-                    <input id="message" type="text" placefolder="コメントを入力">
-                    <button class="View__formButton" onclick="SendMsg()">送信</button>
+                  <form class="form-inline" action="">
+                    <div class="form-group">
+                      <input class="form-control" id="message" type="text" placeholder="コメントを入力">
+                    </div>
+                    <button class="btn btn-default View__formButton" onclick="SendMsg()">送信</button>
+                  </form>
                   <ul class="View__commentLists">
                   </ul>
                 </div>
+
                 <div class="View__member">
                   <p class="View__memberSum">ただいまの入室者：$val人</p>
                   <ul class="View__memberLists">
@@ -93,7 +98,7 @@
         <script src="bower_components/jquery/dist/jquery.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
-        <<script src="javascripts/comment.js"></script>
+        <script src="javascripts/comment.js"></script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

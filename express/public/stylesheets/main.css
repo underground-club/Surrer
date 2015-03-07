@@ -7153,6 +7153,9 @@ body {
 .View__video {
   display: block;
 }
+.View__buttons {
+  margin-top: 10px;
+}
 .View__listener {
   padding-right: 0;
 }
