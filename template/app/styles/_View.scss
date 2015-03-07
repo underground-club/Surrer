@@ -1,0 +1,41 @@
+
+
+.View {
+
+  &__detail {
+
+  }
+
+  &__roomName {
+    font-size: 20px;
+  }
+
+  &__main {
+    clear: both;
+    overflow: hidden;
+ }
+
+ &__roomOwner {
+   text-align: right;
+ }
+
+ &__video {
+   display: block;
+   background-color: #000;
+ }
+
+ &__listener {
+ }
+
+ &__comment {
+   border-top: 1px solid #ccc;
+ }
+
+ &__memberList {
+ }
+
+}
+
+.footer {
+  margin-top: 20px;
+}
