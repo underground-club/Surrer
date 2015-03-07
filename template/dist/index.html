@@ -48,7 +48,13 @@
 
             <div class="View__main row">
               <div class="View__video col-sm-8">
-                <video class="View__videoContent" src="" style="width:100%;height:100%;"></video>
+                <video id="video" class="View__videoContent" src="movie/movie1.mov" width="400" height="300"></video>
+                <div style="width:400px; color:#000000;">
+                  <input type="button" value="Play" onClick="playVideo()">	
+                  <input type="button" value="Stop" onClick="pauseVideo()">
+                  <input type="button" value="Volume Up" onClick="upVolume()">
+                  <input type="button" value="Volume Down" onClick="downVolume()">
+                </div>
               </div>
 
               <div class="View__listener col-sm-4">
@@ -59,12 +65,33 @@
                     <button class="View__formButton">送信</button>
                   </form>
                   <ul class="View__commentLists">
-                    <li class="View__commentList">hogehoge</li>
-                    <li class="View__commentList">hogehoge</li>
+                    <li class="View__commentList"><span class="View__commentUser">username</span>: hogehoge</li>
+                    <li class="View__commentList"><span class="View__commentUser">username</span>: hogehoge</li>
+                    <li class="View__commentList"><span class="View__commentUser">username</span>: hogehoge</li>
+                    <li class="View__commentList"><span class="View__commentUser">username</span>: hogehoge</li>
+                    <li class="View__commentList"><span class="View__commentUser">username</span>: hogehoge</li>
+                    <li class="View__commentList"><span class="View__commentUser">username</span>: hogehoge</li>
+                    <li class="View__commentList"><span class="View__commentUser">username</span>: hogehoge</li>
+                    <li class="View__commentList"><span class="View__commentUser">username</span>: hogehoge</li>
+                    <li class="View__commentList"><span class="View__commentUser">username</span>: hogehoge</li>
+                    <li class="View__commentList"><span class="View__commentUser">username</span>: hogehoge</li>
+                    <li class="View__commentList"><span class="View__commentUser">username</span>: hogehoge</li>
+                    <li class="View__commentList"><span class="View__commentUser">username</span>: hogehoge</li>
+                    <li class="View__commentList"><span class="View__commentUser">username</span>: hogehoge</li>
+                    <li class="View__commentList"><span class="View__commentUser">username</span>: hogehoge</li>
+                    <li class="View__commentList"><span class="View__commentUser">username</span>: hogehoge</li>
+                    <li class="View__commentList"><span class="View__commentUser">username</span>: hogehoge</li>
                   </ul>
                 </div>
                 <div class="View__member">
+                  <p class="View__memberSum">ただいまの入室者：$val人</p>
                   <ul class="View__memberLists">
+                    <li class="View__memberList">nickname</li>
+                    <li class="View__memberList">nickname</li>
+                    <li class="View__memberList">nickname</li>
+                    <li class="View__memberList">nickname</li>
+                    <li class="View__memberList">nickname</li>
+                    <li class="View__memberList">nickname</li>
                     <li class="View__memberList">nickname</li>
                     <li class="View__memberList">nickname</li>
                   </ul>
@@ -91,6 +118,24 @@
             e.src='//www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X');ga('send','pageview');
+
+            var v = document.getElementById('video');
+            function playVideo() {	//再生ボタン押下時の処理
+              //動画を再生
+              v.play();
+            }
+            function pauseVideo() {	//一時停止ボタン押下時の処理
+              //動画を一時停止
+              v.pause();
+            }
+            function upVolume() {	//音量アップボタン押下時の処理
+              //音量を上げる
+              v.volume = v.volume + 0.25;
+            }
+            function downVolume() {	//音量ダウンボタン押下時の処理
+              //音量を下げる
+              v.volume = v.volume - 0.25;
+            }
         </script>
     </body>
 </html>
