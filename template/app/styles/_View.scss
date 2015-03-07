@@ -24,11 +24,37 @@
    background-color: #000;
  }
 
+ &__videoContent {
+   width: 640px;
+   height: 360px;
+ }
+
  &__listener {
+
+
+   ul,
+   li {
+     list-style: none;
+   }
  }
 
  &__comment {
+   
+ }
+
+ &__commentLists {
+   
+ }
+
+ &__commentList {
+   
+ }
+
+ &__member {
    border-top: 1px solid #ccc;
+ }
+
+ &__memberLists {
  }
 
  &__memberList {
