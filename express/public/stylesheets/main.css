@@ -7057,7 +7057,7 @@ button.close {
 body {
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: #f1f1f1;
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -7076,8 +7076,6 @@ body {
 .header h3 {
   margin-top: 0;
   margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
 }
 
 /* Custom page footer */
@@ -7133,6 +7131,15 @@ body {
     border-bottom: 0;
   }
 }
+.Header__logo {
+  padding-left: 60px;
+  line-height: 60px;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 50px;
+  background-image: url("../images/surrer_logo.png");
+}
+
 .View__roomName {
   font-size: 20px;
 }
@@ -7146,12 +7153,35 @@ body {
 .View__video {
   display: block;
 }
+.View__listener {
+  padding-right: 0;
+}
 .View__listener ul,
 .View__listener li {
+  margin: 0;
+  padding: 0;
   list-style: none;
+}
+.View__form {
+  margin-bottom: 10px;
+}
+.View__commentLists {
+  height: 250px;
+  overflow-y: scroll;
+}
+.View__commentList {
+  margin-left: 5px;
 }
 .View__member {
   border-top: 1px solid #ccc;
+}
+.View__memberLists {
+  height: 80px;
+  overflow-y: scroll;
+  margin-top: 5px;
+}
+.View__memberList {
+  margin-left: 5px;
 }
 
 .footer {
