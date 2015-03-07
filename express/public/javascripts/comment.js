@@ -31,9 +31,19 @@ socket.on('message', function(msg) {
   $(".View__commentLists").append('<li class="View__commentList">'+msg.value+'</li>');
 });
 
+// メッセージ欄のキー入力
+function keyPressMes(code) {
+  if (code === 13) {
+    sendMsg();
+  }
+}
 // メッセージを送る
 function SendMsg() {
   var msg = document.getElementById("message");
+  // 空白文字のみの場合は送信しない
+  if (!msg.value.match(/\S/g)) {
+    return;
+  }
   // メッセージを発射する
   socket.emit('message', { id: socket.id, value: msg.value });
   msg.value = "";

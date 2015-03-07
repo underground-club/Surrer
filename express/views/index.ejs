@@ -69,7 +69,7 @@
                   <!-- コメント入力欄 -->
                   <form class="form-inline" onsubmit="return false;">
                     <div class="form-group">
-                      <input class="form-control" id="message" type="text" placeholder="コメントを入力">
+                      <input class="form-control" id="message" type="text" placeholder="コメントを入力" onkeypress="keyPressMes(event.keyCode)">
                     </div>
                     <button class="btn btn-default View__formButton" onclick="SendMsg()">送信</button>
                   </form>
