@@ -33,9 +33,10 @@ socket.on('message', function(msg) {
 
 // メッセージを送る
 function SendMsg() {
-  var msg = document.getElementById("message").value;
+  var msg = document.getElementById("message");
   // メッセージを発射する
-  socket.emit('message', { id: socket.id, value: msg });
+  socket.emit('message', { id: socket.id, value: msg.value });
+  msg.value = "";
 }
 // 切断する
 function DisConnect() {
