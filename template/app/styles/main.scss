@@ -13,7 +13,7 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/assets/fonts/";
 body {
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: #f1f1f1;
+    font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -32,8 +32,6 @@ body {
     h3 {
         margin-top: 0;
         margin-bottom: 0;
-        line-height: 40px;
-        padding-bottom: 19px;
     }
 }
 
