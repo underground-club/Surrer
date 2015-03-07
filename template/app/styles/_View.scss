@@ -1,4 +1,14 @@
+.Header {
 
+  &__logo {
+    padding-left: 60px;
+    line-height: 60px;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-image: url("../images/surrer_logo.png");
+  }
+}
 
 .View {
 

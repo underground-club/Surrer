@@ -7076,8 +7076,6 @@ body {
 .header h3 {
   margin-top: 0;
   margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
 }
 
 /* Custom page footer */
@@ -7133,6 +7131,15 @@ body {
     border-bottom: 0;
   }
 }
+.Header__logo {
+  padding-left: 60px;
+  line-height: 60px;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 50px;
+  background-image: url("../images/surrer_logo.png");
+}
+
 .View__roomName {
   font-size: 20px;
 }
