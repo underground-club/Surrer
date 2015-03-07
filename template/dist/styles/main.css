@@ -7145,11 +7145,6 @@ body {
 }
 .View__video {
   display: block;
-  background-color: #000;
-}
-.View__videoContent {
-  width: 640px;
-  height: 360px;
 }
 .View__listener ul,
 .View__listener li {
