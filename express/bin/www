@@ -29,6 +29,8 @@ var io = socketIO.listen(server);
 var members = [];
 // コメントリスト
 var comments = []
+// 新しく入ってきたユーザリスト
+var new_members = [];
 
 // クライアントが接続してきたときの処理
 io.sockets.on('connection', function(socket) {
@@ -39,7 +41,18 @@ io.sockets.on('connection', function(socket) {
     members.push(member);
     var all_data = { "members": members, "comments": comments };
     io.sockets.emit("come_member", all_data);
+    new_members.push(member);
+    socket.broadcast.emit("get_video_stat");
   });
+
+  // 状態情報を送信
+  socket.on('set_new_members', function(stat) {
+    for (var i = 0; i < new_members.length; i++) {
+      socket.to(new_members[i].id).emit('set_video_stat', stat);
+    }
+    // 新しく参加したメンバ全員に送り終えたら初期化
+    new_members = [];
+  } )
 
   // メッセージを受けたときの処理
   socket.on('message', function(data) {
@@ -48,6 +61,16 @@ io.sockets.on('connection', function(socket) {
     comments.push(data);
     io.sockets.emit('message', { value: data.value });
   });
+
+  // ビデオ操作イベント
+  socket.on('play', function() {
+    console.log("play");
+    socket.broadcast.emit('play');
+  } );
+  socket.on('pause', function() {
+    console.log("pause");
+    socket.broadcast.emit('pause');
+  } );
   
   // クライアントが切断したときの処理
   socket.on('disconnect', function(){
